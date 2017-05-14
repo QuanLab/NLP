@@ -38,13 +38,13 @@ public class CharHelper {
             "oay", "oày", "oáy", "oảy", "oãy", "oạy",
             "oeo", "uao",
             "iơi", "iời", "iới", "iởi", "iỡi", "iợi",
-            "uay",
+            "uay", "uợu",
             "uây", "uôi", "uồi", "uối", "uổi", "uỗi", "uội",
             "ươi", "ươu", "uya", "uyê", "uyệ", "uyề", "uyế", "uyu",
             "uảy", "iao", "iũa", "iẩy", "iuộc",
             "ươi", "ưới", "ười", "ượi", "ưởi",
-            "iảo", "iải", "uơi",
-            "iai", "ười", "uyể", "iáo", "uái", "iỏi", "uẹo",
+            "iảo", "iải", "uơi", "uợu",
+            "iai", "iãi", "ười", "uyể", "iáo", "uái", "iỏi", "uẹo",
             "iậu", "oáy", "ưỡi", "ưới", "ướu",
             "iồi", "uậy", "ườu","iây", "iãy", "iứa",
             "iươ"
@@ -143,6 +143,20 @@ public class CharHelper {
                 return true;
         }
         return false;
+    }
+
+    /**
+     * kiểm tra một chữ cái có phải là nguyên âm không
+     * @param c
+     * @return
+     */
+    public static boolean isNguyemAmSauNghOrGH(char c) {
+        if(c=='e'|| c=='è'|| c=='é'|| c=='ẻ' || c=='ẽ' || c=='ẹ' ||
+                c=='ê'|| c=='ề'|| c=='ế' || c=='ể' || c=='ễ'|| c=='ệ' ||
+                c=='i'|| c=='ì'|| c=='í' || c=='ỉ' || c=='ĩ'|| c=='ị'){
+            return true;
+        }
+        return false ;
     }
 
 }

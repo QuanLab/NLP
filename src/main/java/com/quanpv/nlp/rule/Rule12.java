@@ -22,22 +22,19 @@ public class Rule12 {
             return true;
         }
 
-        if(chars[1]=='h') {
-            if(!CharHelper.isNguyenAm(chars[2])){
-                return false;
-            }
+        if(CharHelper.isNguyenAm(chars[1])){
             return true;
+        }
+        else if(chars[1]=='h') {
+            return CharHelper.isNguyenAm(chars[2]);
         }
         else if(chars[1]=='g') {
             if(chars[2]=='h'){
-                return CharHelper.isNguyenAm(chars[3]);
+                return CharHelper.isNguyemAmSauNghOrGH(chars[3]);
             }
             return CharHelper.isNguyenAm(chars[2]);
         }
-        else if(!CharHelper.isNguyenAm(chars[1])){
-            return false;
-        }
-        return true;
+        return false;
     }
 
 }

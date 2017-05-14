@@ -50,6 +50,11 @@
             <artifactId>guava</artifactId>
             <version>14.0.1</version>
         </dependency>
+        <dependency>
+            <groupId>com.github.ptnplanet</groupId>
+            <artifactId>Java-Naive-Bayes-Classifier</artifactId>
+            <version>1.0.5</version>
+        </dependency>
     </dependencies>
     <build>
         <plugins>
