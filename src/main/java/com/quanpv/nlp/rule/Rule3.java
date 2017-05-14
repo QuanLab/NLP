@@ -24,7 +24,4 @@ public class Rule3 {
         return (soPhuAm<=5)? true: false;
     }
 
-    public static void main(String[] args) {
-        isValid("những");
-    }
 }

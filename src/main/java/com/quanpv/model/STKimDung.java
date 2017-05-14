@@ -3,22 +3,22 @@ package com.quanpv.model;
 
 public class STKimDung {
 
-    private String id;
+    private int id;
     private String deName;
     private String deContent;
 
-    public STKimDung(String id, String deName, String deContent) {
+    public STKimDung(int id, String deName, String deContent) {
         this.id = id;
         this.deName = deName;
         this.deContent = deContent;
     }
 
 
-    public String getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(int id) {
         this.id = id;
     }
 

@@ -10,15 +10,15 @@ public class Rule1 {
      * @param s
      * @return
      */
-    public static boolean isValid1(String s) {
-        char[] chars = s.toCharArray();
-        for (char c : chars) {
-            if (c == 'f' || c == 'j' || c == 'w' || c == 'z') {
-                return false;
-            }
-        }
-        return true;
-    }
+//    public static boolean isValid1(String s) {
+//        char[] chars = s.toCharArray();
+//        for (char c : chars) {
+//            if (c == 'f' || c == 'j' || c == 'w' || c == 'z') {
+//                return false;
+//            }
+//        }
+//        return true;
+//    }
 
     /**
      * Nếu một từ có ký tự unicode không nằm trong bảng chữ cái
@@ -27,11 +27,12 @@ public class Rule1 {
      * @param s
      * @return
      */
-    public static boolean isValid2(String s) {
+    public static boolean isValid(String s) {
 
         char[] chars = s.toCharArray();
         for (char c : chars) {
             if(!CharHelper.isVietnamCharacter(c)){
+//                System.out.println(c);
                 return false;
             }
         }

@@ -12,7 +12,7 @@ public class GrammarFactory {
     private String text;
 
     public GrammarFactory(String text){
-        this.text = text;
+        this.text = text.toLowerCase();
     }
 
     /**
@@ -20,8 +20,8 @@ public class GrammarFactory {
      * @param word
      * @return
      */
-    private boolean isValidWord(String word){
-//        if(!Rule1.isValid1(word)){
+    public boolean isValidWord(String word){
+//        if(!Rule1.isValid(word)){
 //            System.out.println(word + "\t" + "Rule1");
 //        }
 //        if(!Rule2.isValid(word)){
@@ -45,8 +45,36 @@ public class GrammarFactory {
 //        if(!Rule8.isValid(word)){
 //            System.out.println(word + "\t" + "Rule8");
 //        }
-       return (Rule1.isValid1(word)&& Rule2.isValid(word)&& Rule3.isValid(word)&& Rule4.isValid(word)
-               && Rule5.isValid(word)&&Rule6.isValid(word)&&Rule7.isValid(word)&&Rule8.isValid(word));
+//        if(!Rule9.isValid(word)){
+//            System.out.println(word + "\t" + "Rule9");
+//        }
+//        if(!Rule10.isValid(word)){
+//            System.out.println(word + "\t" + "Rule10");
+//        }
+//        if(!Rule11.isValid(word)){
+//            System.out.println(word + "\t" + "Rule11");
+//        }
+//        if(!Rule12.isValid(word)){
+//            System.out.println(word + "\t" + "Rule12");
+//        }
+//        if(!Rule13.isValid(word)){
+//            System.out.println(word + "\t" + "Rule13");
+//        }
+//
+//        if(!Rule14.isValid(word)){
+//            System.out.println(word + "\t" + "Rule14");
+//        }
+//        if(!Rule15.isValid(word)){
+//            System.out.println(word + "\t" + "Rule15");
+//        }
+//        if(!Rule16.isValid(word)){
+//            System.out.println(word + "\t" + "Rule16");
+//        }
+
+       return (Rule1.isValid(word)&&Rule2.isValid(word)&& Rule3.isValid(word)&& Rule4.isValid(word)
+               && Rule5.isValid(word)&&Rule6.isValid(word)&&Rule7.isValid(word)&&Rule8.isValid(word)
+                &&Rule9.isValid(word)&&Rule10.isValid(word)&&Rule11.isValid(word)&&Rule12.isValid(word)
+               &&Rule13.isValid(word) &&Rule14.isValid(word)&&Rule15.isValid(word)&&Rule16.isValid(word));
     }
 
     /**
@@ -56,7 +84,7 @@ public class GrammarFactory {
 
     public List<String> tokenizeText(){
         List<String> results = new ArrayList<>();
-        StringTokenizer st = new StringTokenizer(this.text, "\t \n\r\f?.,\'\"=+-_*&^%$#@!`~></:[]{}()");
+        StringTokenizer st = new StringTokenizer(this.text, "\t \n\r\f?.;,\'\"=+-_*&^%$#@!`~></:[]{}()");
 
         while (st.hasMoreTokens()){
             results.add(st.nextToken());

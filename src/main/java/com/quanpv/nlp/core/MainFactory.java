@@ -1,11 +1,8 @@
 package com.quanpv.nlp.core;
 
 import com.quanpv.database.DBConnection;
-import org.jsoup.Jsoup;
 
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 public class MainFactory {
 

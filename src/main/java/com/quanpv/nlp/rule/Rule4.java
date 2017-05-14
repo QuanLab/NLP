@@ -35,6 +35,7 @@ public class Rule4 {
                         break;
                     }
                 }
+
             } else if(soNguyenAm==3){
                 for(int i=0; i<chars.length; i++) {
                     //

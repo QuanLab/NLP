@@ -1,17 +1,19 @@
 package com.quanpv.database;
 
+import com.google.common.io.Files;
 import com.quanpv.model.STKimDung;
 import com.quanpv.nlp.core.GrammarFactory;
 import org.jsoup.Jsoup;
 
+import java.io.File;
+import java.io.IOException;
+import java.nio.charset.Charset;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
-import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
 
 
 public class DBConnection {
@@ -61,7 +63,7 @@ public class DBConnection {
             PreparedStatement pst = conn.prepareStatement("SELECT * FROM st_kimdung");
             ResultSet rs = pst.executeQuery();
             while (rs.next()) {
-                String id = rs.getString("deID");
+                int id = rs.getInt("deID");
                 String deName = rs.getString("deName");
                 String deContent = rs.getString("decontent");
                 STKimDung stKimDung = new STKimDung(id, deName, deContent);
@@ -89,5 +91,21 @@ public class DBConnection {
             e.printStackTrace();
         }
         return results;
+    }
+
+    public static void main(String[] args) throws IOException{
+        DBConnection connection = new DBConnection();
+        List<STKimDung> data = connection.getAll();
+
+        for(STKimDung s: data) {
+            String fileName = "data" + File.separator + String.valueOf(s.getId());
+            try{
+                File file = new File(fileName);
+                file.createNewFile();
+                Files.append(Jsoup.parse(s.getDeContent()).text(), file, Charset.defaultCharset());
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
     }
 }

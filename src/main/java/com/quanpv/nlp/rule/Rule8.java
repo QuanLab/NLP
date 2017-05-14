@@ -1,8 +1,6 @@
 package com.quanpv.nlp.rule;
 
-/**
- * Created by quanpv on 22/02/2017.
- */
+
 public class Rule8 {
 
     /**
@@ -24,8 +22,8 @@ public class Rule8 {
         }
 
         if(soNguyenAm>=3){
-            for(String boBa: CharHelper.boBaNguyenAm) {
-                if(s.contains(boBa)){
+            for(String boDoi: CharHelper.boBaNguyenAm) {
+                if(s.contains(boDoi)){
                     return true;
                 }
             }

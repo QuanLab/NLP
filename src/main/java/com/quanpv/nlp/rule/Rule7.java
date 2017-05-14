@@ -1,8 +1,6 @@
 package com.quanpv.nlp.rule;
 
-/**
- * Created by quanpv on 22/02/2017.
- */
+
 public class Rule7 {
 
     /**
